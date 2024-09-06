@@ -1,0 +1,5 @@
+label:
+actionValue > 10: positive, else negtive
+
+feature cols:
+sceneId,eid,itemId,age,gender,categoryLevel1,categoryLevel2,duration,publisherName,source
