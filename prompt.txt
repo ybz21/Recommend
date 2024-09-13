@@ -1,0 +1,18 @@
+有一个视频推荐的训练数据，包含这些特征
+
+* sceneId: 场景id
+* eid: 用户id
+* itemId: 物料id
+* actionTime: 操作时间戳
+* age: 年龄, 可能缺少
+* gender: 性别：男、女
+* categoryLevel1: 物料分类标签1, str类型
+* categoryLevel2: 物料分类标签2, str类型
+* duration: 观看时长
+* publisherName: 发布者, str类型
+* publisherTime: 发布时间戳
+* source: 发布渠道, str类型
+
+目标：训练一个视频观看时长duration>10s的预估模型
+
+请帮我用python、sklearn、pipeline做一下数据预处理、模型训练、模型存储，最终基于模型存储，load模型，对外提供restful服务
