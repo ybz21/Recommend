@@ -1,3 +1,6 @@
-sklearn
+scikit-learn
 pandas
+numpy
 lightgbm
+fastapi
+uvicorn

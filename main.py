@@ -3,9 +3,11 @@ import uvicorn
 from fastapi import FastAPI
 from joblib import load
 
-app = FastAPI()
 
-pipeline = load('model.pkl')
+
+pipeline = load('./model.pkl')
+
+app = FastAPI()
 
 
 # {
@@ -20,9 +22,9 @@ pipeline = load('model.pkl')
 async def predict(request_data: dict):
     data = request_data.get("data")
     df = pd.DataFrame(data)
-    prediction = pipeline.predict(df)
-    return {"prediction": prediction.tolist()}
+    prediction = pipeline.predict_proba(df)[:, 1]
+    return {"results": prediction.tolist()}
 
 
 if __name__ == '__main__':
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=80)
