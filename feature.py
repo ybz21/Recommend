@@ -3,10 +3,10 @@ import pandas as pd
 
 
 def process_time_features(df):
-    df['actionTime'] = pd.to_datetime(df['actionTime'])
-    df['publishTime'] = pd.to_datetime(df['publishTime'])
-    df['action_hour'] = df['actionTime'].dt.hour
-    df['action_weekday'] = df['actionTime'].dt.weekday
+    # df['actionTime'] = pd.to_datetime(df['actionTime'])
+    # df['publishTime'] = pd.to_datetime(df['publishTime'])
+    # df['action_hour'] = df['actionTime'].dt.hour
+    # df['action_weekday'] = df['actionTime'].dt.weekday
     df['publish_hour'] = df['publishTime'].dt.hour
     df['publish_weekday'] = df['publishTime'].dt.weekday
     return df.drop(['actionTime', 'publishTime'], axis=1)
